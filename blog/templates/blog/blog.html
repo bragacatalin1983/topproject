@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 id="logo">C.T</h1>
+        <ul class="links">
+          <li><a href="{% url 'home' %}">Acasa</a></li>
+          <li><a href="{% url 'desprenoi' %}">Despre noi</a></li>
+          <li><a href="{% url 'paginait' %}">Zona IT</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="{% url 'autentificare' %}">Creare cont</a></li>
+          <li><a href="{% url 'loginpage' %}">Login</a></li>
+          <div class="clear"></div>
+        </ul>
+      </nav>
+    </header>
+    {% if user.is_authenticated %}
+    <div class="loggedin">
+      <h3>Logged in as {{user.username}}</h3>
+      <form action="{% url 'logoutuser' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="logoutbutton">Logout</button>
+      </form>
+    </div>
+
+    {% endif %}
+    <h1>Bine ati venit la pagina de Blog</h1>
+
+    {% for blog in blogs %}
+
+    <div class="pythonbody">
+      <h2>{{blog.title}}</h2>
+      <a href="{% url 'posts' blog.id %}"
+        ><img src="{{blog.img.url}}" alt="none"
+      /></a>
+      <h4>{{blog.date}}</h4>
+      <h3>{{blog.description}}</h3>
+
+      <br />
+    </div>
+
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+.links li {
+  display: inline;
+}
+.links a {
+  color: aliceblue;
+  float: right;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#logo {
+  color: aliceblue;
+  float: left;
+}
+.clear {
+  clear: both;
+}
+.navbar {
+  background-color: rgb(21, 36, 49);
+}
+
+.links a:hover {
+  color: brown;
+}
+
+.mainbody {
+  height: 100%;
+  position: relative;
+}
+
+.txt h2 {
+  padding-top: 10px;
+  text-align: right;
+  font-size: 50px;
+  color: rgb(17, 8, 68);
+  font-family: "Indie Flower", cursive;
+}
+
+html {
+  background-color: rgb(253, 251, 255);
+}
+
+h1 {
+  color: rgb(71, 9, 134);
+  text-align: center;
+  font-size: 80px;
+  font-family: "Raleway", sans-serif;
+  font-family: "Dancing Script", cursive;
+}
+
+h2 {
+  color: rgb(47, 107, 65);
+  font-size: 50px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-family: "Dancing Script", cursive;
+}
+
+.pythonbody {
+  background-color: rgb(253, 253, 253);
+  margin: 20px 20px;
+  position: relative;
+  width: cover;
+}
+
+.pythonbody a img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid rgb(13, 3, 49);
+}
+
+img:hover {
+  box-shadow: 0px 0px 4px 4px rgba(81, 1, 92, 0.5);
+}
+
+.pythonbody h3 {
+  color: darkblue;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-family: "Dancing Script", cursive;
+}
+
+.pythonbody h4 {
+  color: rgb(78, 15, 15);
+  font-size: 20px;
+  text-align: center;
+}
+.links li {
+  display: inline;
+}
+.links a {
+  color: aliceblue;
+  float: right;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#logo {
+  font-size: 30px;
+  color: aliceblue;
+  float: left;
+}
+.clear {
+  clear: both;
+}
+.navbar {
+  background-color: rgb(21, 36, 49);
+}
+
+.links a:hover {
+  color: brown;
+}
+.loggedin {
+  background-color: rgb(21, 36, 49);
+}
+.loggedin h3 {
+  color: rgb(248, 248, 248);
+  font-size: 15px;
+  text-align: center;
+}
+.loggedin button {
+  padding: 5px 15px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  border: 1px solid rgb(253, 253, 253);
+  margin-left: 48%;
+}

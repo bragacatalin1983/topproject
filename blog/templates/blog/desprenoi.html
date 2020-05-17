@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Despre noi</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+      .links li {
+        display: inline;
+      }
+      .links a {
+        color: aliceblue;
+        float: right;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 20px;
+      }
+
+      #logo {
+        font-size: 30px;
+        color: aliceblue;
+        float: left;
+      }
+      .clear {
+        clear: both;
+      }
+      .navbar {
+        background-color: rgb(21, 36, 49);
+      }
+
+      .links a:hover {
+        color: brown;
+      }
+      .loggedin {
+        background-color: rgb(21, 36, 49);
+      }
+      .loggedin h3 {
+        color: rgb(248, 248, 248);
+        font-size: 15px;
+        text-align: center;
+      }
+      .loggedin button {
+        padding: 5px 15px;
+        background-color: rgb(250, 250, 250);
+        border-radius: 10px;
+        border: 1px solid rgb(253, 253, 253);
+        margin-left: 48%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 id="logo">C.T</h1>
+        <ul class="links">
+          <li><a href="{% url 'home' %}">Acasa</a></li>
+          <li><a href="{% url 'desprenoi' %}">Despre noi</a></li>
+          <li><a href="{% url 'paginait' %}">Zona IT</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="{% url 'autentificare' %}">Creare cont</a></li>
+          <li><a href="{% url 'loginpage' %}">Login</a></li>
+          <div class="clear"></div>
+        </ul>
+      </nav>
+    </header>
+    {% if user.is_authenticated %}
+    <div class="loggedin">
+      <h3>Logged in as {{user.username}}</h3>
+      <form action="{% url 'logoutuser' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="logoutbutton">Logout</button>
+      </form>
+    </div>
+
+    {% endif %} despre page
+    <header>
+      <h1>This is the about us page</h1>
+      <h2>All your need to know</h2>
+    </header>
+    <div class="mainbody">
+      <p>balalsalsada</p>
+      <p>balalsalsada</p>
+      <p>balalsalsada</p>
+      <p>balalsalsada</p>
+      <form action="" class="contactform">
+        <input type="text" class="message" name="message" /><br />
+        <input type="text" class="password" name="password" /><br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
